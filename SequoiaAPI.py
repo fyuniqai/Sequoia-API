@@ -139,6 +139,7 @@ def delete_shipment_demo(shipment_reference):
             <shipmentReference>{shipment_reference}</shipmentReference>
         </shipmentIdentity>
     </shipmentIdentifier>
+    
     '''
     try:
         DeleteRequest = client.get_type('ns3:DeleteRequest')
@@ -164,4 +165,4 @@ if __name__ == '__main__':
     # logging.info("开始创建 shipment...")
     # create_shipment_demo()
     logging.info("开始删除 shipment...")
-    delete_shipment_demo("ABCD012345")
+    delete_shipment_demo("S25/A0652")
