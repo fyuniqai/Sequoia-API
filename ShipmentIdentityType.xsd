@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:this="asm.org.uk/Sequoia/ShipmentIdentityType"
+  xmlns="ShipmentIdentityType"
+  targetNamespace="asm.org.uk/Sequoia/ShipmentIdentityType">
+     <xs:complexType name="shipmentIdentityType">
+       <xs:sequence>
+         <xs:choice>
+           <xs:element name="shipmentReference" minOccurs="1" maxOccurs="1">
+           <xs:simpleType>
+             <xs:restriction base="xs:string">
+               <xs:length value="9"/>
+             </xs:restriction>
+           </xs:simpleType>
+         </xs:element>
+           <xs:element name="shipmentKey">
+             <xs:complexType>
+               <xs:sequence>
+                 <xs:element name="masterReference" minOccurs="0" maxOccurs="1">
+                   <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                       <xs:maxLength value="25"/>
+                     </xs:restriction>
+                   </xs:simpleType>
+                 </xs:element>
+                 <xs:element name="houseReference" minOccurs="0" maxOccurs="1">
+                   <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                       <xs:maxLength value="25"/>
+                     </xs:restriction>
+                   </xs:simpleType>
+                 </xs:element>
+               </xs:sequence>
+             </xs:complexType>
+           </xs:element>
+         </xs:choice>
+       </xs:sequence>
+     </xs:complexType>
+</xs:schema>
+
